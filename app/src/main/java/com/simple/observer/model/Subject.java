@@ -19,7 +19,11 @@ public class Subject {
 
     public static synchronized Subject getInstance(){
         if(subject==null){
-            subject=new Subject();
+            synchronized (Subject.class){
+                if (subject == null){
+                    subject=new Subject();
+                }
+            }
         }
         return subject;
     }

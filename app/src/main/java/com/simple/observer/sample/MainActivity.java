@@ -79,6 +79,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ViewSubject.getInstance().detachAll();
+        ViewSubject.getInstance().detachAll();  //退出activity时，移除所有观察者对象
     }
 }
